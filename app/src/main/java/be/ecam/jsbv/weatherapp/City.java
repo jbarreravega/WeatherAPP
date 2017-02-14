@@ -24,6 +24,7 @@ public class City {
     private int cnt = 0;
 
     private static ArrayList<DayWeather> dayWeatherList = new ArrayList<>();
+    private static ArrayList<City> cities = new ArrayList<>();
 
     public City (int id, String name, double lon, double lat,
                  String country, int population){
@@ -88,8 +89,13 @@ public class City {
         return id;
     }
 
-    public String getName(){
-        return name;
+    public static String[] getNames() {
+        String[] names = new String[cities.size()];
+        for (int i=0; i<cities.size(); i++) {
+            names[i] = cities.get(i).name;
+        }
+
+        return names;
     }
 
     public String getCountry(){

@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemA
             String[] queryResults = null;
             try {
                 json = NetworkUtils.getResponseFromHttpUrl(searchUrl);
-                Student.parse(json);
-                queryResults = Student.getNames();
+                City.parse(json);
+                queryResults = City.getNames();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemA
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.student_list_menu, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemA
     @Override
     public void onClick(int index) {
         Context context = this;
-        Class destinationClass = StudentActivity.class;
+        Class destinationClass = DetailsActivity.class;
         Intent intent = new Intent(context, destinationClass);
         intent.putExtra(Intent.EXTRA_INDEX, index);
         startActivity(intent);

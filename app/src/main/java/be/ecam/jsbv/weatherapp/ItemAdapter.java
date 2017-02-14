@@ -12,7 +12,7 @@ import android.support.v7.widget.RecyclerView;
  * Created by 14309 on 14-02-17.
  */
 
-public class ItemAdapter {
+public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterViewHolder> {
     private String[] mData = null;
 
     private ItemAdapterOnClickHandler clickHandler;
@@ -30,7 +30,7 @@ public class ItemAdapter {
         public final TextView mTextView;
         public ItemAdapterViewHolder(View view) {
             super(view);
-            mTextView = (TextView) view.findViewById(R.id.student_name);
+            mTextView = (TextView) view.findViewById(R.id.city_name);
             view.setOnClickListener(this);
         }
 
