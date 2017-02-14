@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 
 public class NetworkUtils {
-    public static String getReponseFromURL(String url) throws IOException {
+    public static String getResponseFromHttpUrl(String url) throws IOException {
 
         URL urlObject = new URL(url);
         HttpURLConnection urlConnection =
