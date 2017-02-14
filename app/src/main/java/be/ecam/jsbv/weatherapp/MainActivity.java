@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements ItemAdapter.ItemA
             //Context context = this;
             //String textToShow = "Action initiated";
             //Toast.makeText(context, textToShow, Toast.LENGTH_SHORT).show();
-            new QueryTask().execute("http://calendar.ecam.be/list/e");
+            new QueryTask().execute("https://andfun-weather.udacity.com/weather");
             return true;
         }
         return super.onOptionsItemSelected(item);
