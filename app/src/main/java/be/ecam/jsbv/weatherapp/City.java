@@ -52,6 +52,8 @@ public class City {
         int population = jsonCity.getInt("population");
         City city = new City(id, name, lon, lat, country, population);
 
+        cities.add(city);
+
 
         JSONArray jsonDayWeatherList = jsonCityWeather.getJSONArray("list");
         for(int i = 0; i < cnt; i++) {
@@ -71,15 +73,15 @@ public class City {
             double eve = jsonTemp.getDouble("eve");
             double morn = jsonTemp.getDouble("morn");
 
-            JSONObject jsonWeather = jsonDayWeather.getJSONObject("weather");
-            int weatherID = jsonWeather.getInt("id");
-            String main = jsonWeather.getString("main");
-            String description = jsonWeather.getString("description");
-            String icon = jsonWeather.getString("icon");
+            //JSONObject jsonWeather = jsonDayWeather.getJSONObject("weather");
+            //int weatherID = jsonWeather.getInt("id");
+            //String main = jsonWeather.getString("main");
+            //String description = jsonWeather.getString("description");
+            //String icon = jsonWeather.getString("icon");
 
             DayWeather dayWeather = new DayWeather(dt, pressure, humidity, speed, deg, clouds);
             dayWeather.setTemp(day, min, max, night, eve, morn);
-            dayWeather.setWeather(id, main, description, icon);
+            //dayWeather.setWeather(id, main, description, icon);
 
             dayWeatherList.add(dayWeather);
         }
